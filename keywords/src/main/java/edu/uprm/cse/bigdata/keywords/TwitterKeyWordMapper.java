@@ -1,14 +1,14 @@
-package edu.uprm.cse.bigdata.key-words;
+package edu.uprm.cse.bigdata.keywords;
 
-        import org.apache.hadoop.io.IntWritable;
-        import org.apache.hadoop.io.LongWritable;
-        import org.apache.hadoop.io.Text;
-        import org.apache.hadoop.mapreduce.Mapper;
-        import twitter4j.Status;
-        import twitter4j.TwitterException;
-        import twitter4j.TwitterObjectFactory;
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.LongWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Mapper;
+import twitter4j.Status;
+import twitter4j.TwitterException;
+import twitter4j.TwitterObjectFactory;
 
-        import java.io.IOException;
+import java.io.IOException;
 
 public class TwitterKeyWordMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
     @Override

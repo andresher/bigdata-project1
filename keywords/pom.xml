@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>edu.uprm.cse.bigdata.key-words</groupId>
-  <artifactId>key-words</artifactId>
+  <groupId>edu.uprm.cse.bigdata.keywords</groupId>
+  <artifactId>keywords</artifactId>
   <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>key-words</name>
+  <name>keywords</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
@@ -60,7 +60,7 @@
   </dependencies>
 
   <build>
-    <finalName>key-words-${project.version}</finalName>
+    <finalName>keywords-${project.version}</finalName>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>

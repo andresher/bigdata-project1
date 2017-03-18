@@ -15,7 +15,7 @@ public class TwitterKeyWordDriver {
             System.exit(-1);
         }
         Job job = new Job();
-        job.setJarByClass(edu.uprm.cse.bigdata.keywords.TwitterKeyWorkDriver.class);
+        job.setJarByClass(edu.uprm.cse.bigdata.keywords.TwitterKeyWordDriver.class);
         job.setJobName("Count Key Word Frequency");
 
         FileInputFormat.addInputPath(job, new Path(args[0]));

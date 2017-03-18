@@ -1,4 +1,4 @@
-package edu.uprm.cse.bigdata;
+package edu.uprm.cse.bigdata.mrsp03;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
@@ -10,6 +10,9 @@ import twitter4j.TwitterObjectFactory;
 
 import java.io.IOException;
 
+/**
+ * Created by manuel on 3/6/17.
+ */
 public class TwitterKeyWordMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
     @Override
     public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
@@ -28,5 +31,6 @@ public class TwitterKeyWordMapper extends Mapper<LongWritable, Text, Text, IntWr
         catch(TwitterException e){
 
         }
+
     }
 }

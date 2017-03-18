@@ -1,4 +1,4 @@
-package edu.uprm.cse.bigdata.mrsp03;
+package edu.uprm.cse.bigdata.key-words;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
@@ -9,7 +9,7 @@ import java.io.IOException;
 /**
  * Created by manuel on 3/6/17.
  */
-public class TwitterKeyWorkReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
+public class TwitterKeyWordReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
     @Override
     protected void reduce(Text key, Iterable<IntWritable> values, Context context)
             throws IOException, InterruptedException {

@@ -11,19 +11,18 @@ public class TwitterKeyWordDriver {
 
     public static void main(String[] args) throws Exception {
         if (args.length != 2) {
-            System.err.println("Usage: TwitterKeyWorkDriver <input path> <output path>");
+            System.err.println("Usage: TwitterKeyWordDriver <input path> <output path>");
             System.exit(-1);
         }
         Job job = new Job();
-        job.setJarByClass(edu.uprm.cse.bigdata.mrsp03.TwitterKeyWorkDriver.class);
-        job.setJobName("Count TweetsbyUsr");
+        job.setJarByClass(bigdata.TwitterKeyWordDriver.class);
+        job.setJobName("Count Key Word Frequency");
 
         FileInputFormat.addInputPath(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
 
-        job.setMapperClass(edu.uprm.cse.bigdata.mrsp03.TwitterKeyWordMapper.class);
-        job.setReducerClass(edu.uprm.cse.bigdata.mrsp03.TwitterKeyWorkReducer.class);
-        //job.setCombinerClass(edu.uprm.cse.bigdata.mrsp02.TwitterReduceByScreenName.class);
+        job.setMapperClass(bigdata.TwitterKeyWordMapper.class);
+        job.setReducerClass(bigdata.TwitterKeyWordReducer.class);
 
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(IntWritable.class);

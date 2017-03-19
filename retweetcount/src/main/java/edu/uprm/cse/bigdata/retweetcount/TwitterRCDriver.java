@@ -25,7 +25,7 @@ public class TwitterRCDriver {
         job.setReducerClass(edu.uprm.cse.bigdata.retweetcount.TwitterRCReducer.class);
 
         job.setOutputKeyClass(Text.class);
-        job.setOutputValueClass(IntWritable.class);
+        job.setOutputValueClass(Text.class);
 
         System.exit(job.waitForCompletion(true) ? 0 : 1);
     }

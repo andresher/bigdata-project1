@@ -18,12 +18,28 @@ public class TwitterKeyWordMapper extends Mapper<LongWritable, Text, Text, IntWr
         try {
             Status status = TwitterObjectFactory.createStatus(rawTweet);
             String tweet = status.getText().toUpperCase();
-            if (tweet.contains("MAGA")){
+            if (tweet.contains("TRUMP")){
+                context.write(new Text("TRUMP"), new IntWritable(1));
+            }
+            else if (tweet.contains("MAGA")){
                 context.write(new Text("MAGA"), new IntWritable(1));
             }
             else if (tweet.contains("DICTATOR")){
                 context.write(new Text("DICTATOR"), new IntWritable(1));
             }
+            else if (tweet.contains("IMPEACH")){
+                context.write(new Text("IMPEACH"), new IntWritable(1));
+            }
+            else if (tweet.contains("DRAIN")){
+                context.write(new Text("DRAIN"), new IntWritable(1));
+            }
+            else if (tweet.contains("SWAMP")){
+                context.write(new Text("SWAMP"), new IntWritable(1));
+            }
+            else if (tweet.contains("CHANGE")){
+                context.write(new Text("CHANGE"), new IntWritable(1));
+            }
+
         }
         catch(TwitterException e){
 

@@ -20,7 +20,9 @@ public class TwitterRCMapper extends Mapper<LongWritable, Text, Text, IntWritabl
 
         try {
             Status status = TwitterObjectFactory.createStatus(rawTweet);
-            context.write(new Text(Long.toString(status.getId())), new IntWritable(status.getRetweetCount()));
+            if(status.isRetweet()){
+                context.write(new Text(Long.toString(status.getRetweetedStatus().getId())), new IntWritable(status.getRetweetedStatus().getRetweetCount()));
+            }
         }
         catch(TwitterException e){
 

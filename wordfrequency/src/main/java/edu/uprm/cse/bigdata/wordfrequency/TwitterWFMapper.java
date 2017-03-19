@@ -1,4 +1,4 @@
-package edu.uprm.cse.bigdata.keywords;
+package edu.uprm.cse.bigdata.wordfrequency;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;

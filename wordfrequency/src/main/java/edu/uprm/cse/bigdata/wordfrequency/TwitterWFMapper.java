@@ -13,11 +13,10 @@ import java.util.List;
 import java.io.IOException;
 
 public class TwitterWFMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
+
+    private List<String> stopWords = Arrays.asList("A", "AN", "AND", "ARE", "AS", "AT", "BE", "BY", "FOR", "FROM", "HAS", "HE", "IN", "IS", "IT", "ITS", "OF", "ON", "THAT", "THE", "TO", "WAS", "WERE", "WILL", "WITH");
+
     @Override
-
-    private List<String> stopWords = Arrays.asList("A", "AN", "AND", "ARE", "AS", "AT", "BE", "BY", "FOR", "FROM",
-            "HAS", "HE", "IN", "IS", "IT", "ITS", "OF", "ON", "THAT", "THE", "TO", "WAS", "WERE", "WILL", "WITH");
-
     public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         String rawTweet = value.toString();
 
@@ -26,7 +25,7 @@ public class TwitterWFMapper extends Mapper<LongWritable, Text, Text, IntWritabl
             String tweet = status.getText().toUpperCase();
             String[] tweetWordsArray = tweet.split(" ");
             List<String> tweetWords = Arrays.asList(tweetWordsArray);
-            for(String word in tweetWords){
+            for(String word: tweetWords){
                 if (!stopWords.contains(word)){
                     context.write(new Text(word), new IntWritable(1));
                 }

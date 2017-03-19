@@ -15,14 +15,14 @@ public class TwitterWFDriver {
             System.exit(-1);
         }
         Job job = new Job();
-        job.setJarByClass(edu.uprm.cse.bigdata.keywords.TwitterWFDriver.class);
+        job.setJarByClass(edu.uprm.cse.bigdata.wordfrequency.TwitterWFDriver.class);
         job.setJobName("Count Word Frequency");
 
         FileInputFormat.addInputPath(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
 
-        job.setMapperClass(edu.uprm.cse.bigdata.keywords.TwitterWFMapper.class);
-        job.setReducerClass(edu.uprm.cse.bigdata.keywords.TwitterWFReducer.class);
+        job.setMapperClass(edu.uprm.cse.bigdata.wordfrequency.TwitterWFMapper.class);
+        job.setReducerClass(edu.uprm.cse.bigdata.wordfrequency.TwitterWFReducer.class);
 
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(IntWritable.class);

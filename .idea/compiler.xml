@@ -23,10 +23,12 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="key-words-mr" />
+        <module name="wordfrequency" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="key-words-mr" target="1.5" />
+      <module name="wordfrequency" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

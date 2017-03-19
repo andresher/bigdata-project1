@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/bigdata-project1.iml" filepath="$PROJECT_DIR$/.idea/bigdata-project1.iml" />
       <module fileurl="file://$PROJECT_DIR$/key-words-mr/key-words-mr.iml" filepath="$PROJECT_DIR$/key-words-mr/key-words-mr.iml" />
       <module fileurl="file://$PROJECT_DIR$/retweetcount/retweetcount.iml" filepath="$PROJECT_DIR$/retweetcount/retweetcount.iml" />
+      <module fileurl="file://$PROJECT_DIR$/statusbyuser/statusbyuser.iml" filepath="$PROJECT_DIR$/statusbyuser/statusbyuser.iml" />
       <module fileurl="file://$PROJECT_DIR$/users/users.iml" filepath="$PROJECT_DIR$/users/users.iml" />
       <module fileurl="file://$PROJECT_DIR$/wordfrequency/wordfrequency.iml" filepath="$PROJECT_DIR$/wordfrequency/wordfrequency.iml" />
     </modules>

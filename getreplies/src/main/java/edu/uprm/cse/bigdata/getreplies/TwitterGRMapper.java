@@ -20,7 +20,7 @@ public class TwitterGRMapper extends Mapper<LongWritable, Text, Text, Text> {
 
         try {
             Status status = TwitterObjectFactory.createStatus(rawTweet);
-            if(status.getInReplyToUserId()!=-1 || status.getInReplyToUserId()!=-1L){
+            if(status.getInReplyToStatusId()!=-1){
                 context.write(new Text(Long.toString(status.getInReplyToStatusId())), new Text(Long.toString(status.getId())));
             }
         }

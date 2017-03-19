@@ -22,6 +22,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="getreplies" />
         <module name="key-words-mr" />
         <module name="retweetcount" />
         <module name="statusbyuser" />
@@ -30,6 +31,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="getreplies" target="1.5" />
       <module name="key-words-mr" target="1.5" />
       <module name="retweetcount" target="1.5" />
       <module name="statusbyuser" target="1.5" />

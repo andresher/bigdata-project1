@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/bigdata-project1.iml" filepath="$PROJECT_DIR$/.idea/bigdata-project1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/getreplies/getreplies.iml" filepath="$PROJECT_DIR$/getreplies/getreplies.iml" />
       <module fileurl="file://$PROJECT_DIR$/key-words-mr/key-words-mr.iml" filepath="$PROJECT_DIR$/key-words-mr/key-words-mr.iml" />
       <module fileurl="file://$PROJECT_DIR$/retweetcount/retweetcount.iml" filepath="$PROJECT_DIR$/retweetcount/retweetcount.iml" />
       <module fileurl="file://$PROJECT_DIR$/statusbyuser/statusbyuser.iml" filepath="$PROJECT_DIR$/statusbyuser/statusbyuser.iml" />

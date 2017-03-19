@@ -14,7 +14,7 @@ public class TwitterRCReducer extends Reducer<Text, Text, Text, Text> {
         String retweets = "[";
 
         for (Text value : values){
-            retweets += ", "+value.toString();
+            retweets += " "+value.toString()+" ";
         }
         context.write(key, new Text(retweets + "]"));
     }

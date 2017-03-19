@@ -25,7 +25,7 @@ public class TwitterWFMapper extends Mapper<LongWritable, Text, Text, IntWritabl
             Status status = TwitterObjectFactory.createStatus(rawTweet);
             String tweet = status.getText().toUpperCase();
             String[] tweetWordsArray = tweet.split(" ");
-            List<String> tweetWords = Arrays.asList(items);
+            List<String> tweetWords = Arrays.asList(tweetWordsArray);
             for(String word in tweetWords){
                 if (!stopWords.contains(word)){
                     context.write(new Text(word), new IntWritable(1));

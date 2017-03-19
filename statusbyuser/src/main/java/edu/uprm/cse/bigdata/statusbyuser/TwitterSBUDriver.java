@@ -15,7 +15,7 @@ public class TwitterSBUDriver {
             System.exit(-1);
         }
         Job job = new Job();
-        job.setJarByClass(edu.uprm.cse.bigdata.retweetcount.TwitterRCDriver.class);
+        job.setJarByClass(edu.uprm.cse.bigdata.statusbyuser.TwitterSBUDriver.class);
         job.setJobName("Get Status by User");
 
         FileInputFormat.addInputPath(job, new Path(args[0]));

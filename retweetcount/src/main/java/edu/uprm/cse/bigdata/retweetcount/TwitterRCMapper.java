@@ -12,7 +12,7 @@ import java.util.List;
 
 import java.io.IOException;
 
-public class TwitterRCMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
+public class TwitterRCMapper extends Mapper<LongWritable, Text, Text, Text> {
 
     @Override
     public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
@@ -21,7 +21,7 @@ public class TwitterRCMapper extends Mapper<LongWritable, Text, Text, IntWritabl
         try {
             Status status = TwitterObjectFactory.createStatus(rawTweet);
             if(status.isRetweet()){
-                context.write(new Text(Long.toString(status.getRetweetedStatus().getId())), new IntWritable(status.getRetweetedStatus().getRetweetCount()));
+                context.write(new Text(Long.toString(status.getRetweetedStatus().getId())), new Text(Long.toString(status.getId())));
             }
         }
         catch(TwitterException e){

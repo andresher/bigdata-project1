@@ -6,16 +6,16 @@ import org.apache.hadoop.mapreduce.Reducer;
 
 import java.io.IOException;
 
-public class TwitterRCReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
+public class TwitterRCReducer extends Reducer<Text, Text, Text, Text> {
     @Override
-    protected void reduce(Text key, Iterable<IntWritable> values, Context context)
+    protected void reduce(Text key, Iterable<Text> values, Context context)
             throws IOException, InterruptedException {
 
-        int count = 0;
+        String retweets = "[";
 
-        for (IntWritable value : values){
-            count += value.get();
+        for (Text value : values){
+            retweets += ", "+value.toString();
         }
-        context.write(key, new IntWritable(count));
+        context.write(key, new Text(retweets + "]"));
     }
 }

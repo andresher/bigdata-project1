@@ -11,11 +11,11 @@ public class TwitterRCReducer extends Reducer<Text, Text, Text, Text> {
     protected void reduce(Text key, Iterable<Text> values, Context context)
             throws IOException, InterruptedException {
 
-        String retweets = "";
+        String retweets = "[";
 
         for (Text value : values){
-            retweets += value.toString();
+            retweets += " "+value.toString()+" ";
         }
-        context.write(key, new Text(retweets));
+        context.write(key, new Text(retweets + "]"));
     }
 }

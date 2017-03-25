@@ -20,9 +20,7 @@ public class TwitterSBUMapper extends Mapper<LongWritable, Text, Text, Text> {
 
         try {
             Status status = TwitterObjectFactory.createStatus(rawTweet);
-            if(status.isRetweet()){
-                context.write(new Text(status.getUser().getScreenName()), new Text(Long.toString(status.getId())));
-            }
+            context.write(new Text(status.getUser().getScreenName()), new Text(Long.toString(status.getId())));
         }
         catch(TwitterException e){
 

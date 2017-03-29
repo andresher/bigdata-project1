@@ -26,7 +26,7 @@ public class TwitterWFMapper extends Mapper<LongWritable, Text, Text, IntWritabl
             String[] tweetWordsArray = tweet.split(" ");
             List<String> tweetWords = Arrays.asList(tweetWordsArray);
             for(String word: tweetWords){
-                if (!stopWords.contains(word)){
+                if (!stopWords.contains(word) && !word.contains("\n") && !word.contains("\t")){
                     context.write(new Text(word), new IntWritable(1));
                 }
             }

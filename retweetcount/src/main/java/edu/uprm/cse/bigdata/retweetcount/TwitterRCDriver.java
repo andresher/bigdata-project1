@@ -1,4 +1,4 @@
-package edu.uprm.cse.bigdata.retweetcount;
+package edu.uprm.cse.bigdata.retweets;
 
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
@@ -15,14 +15,14 @@ public class TwitterRCDriver {
             System.exit(-1);
         }
         Job job = new Job();
-        job.setJarByClass(edu.uprm.cse.bigdata.retweetcount.TwitterRCDriver.class);
+        job.setJarByClass(edu.uprm.cse.bigdata.retweets.TwitterRCDriver.class);
         job.setJobName("Count Retweets of Tweets");
 
         FileInputFormat.addInputPath(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
 
-        job.setMapperClass(edu.uprm.cse.bigdata.retweetcount.TwitterRCMapper.class);
-        job.setReducerClass(edu.uprm.cse.bigdata.retweetcount.TwitterRCReducer.class);
+        job.setMapperClass(edu.uprm.cse.bigdata.retweets.TwitterRCMapper.class);
+        job.setReducerClass(edu.uprm.cse.bigdata.retweets.TwitterRCReducer.class);
 
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);

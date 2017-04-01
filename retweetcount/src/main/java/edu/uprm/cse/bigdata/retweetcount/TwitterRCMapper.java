@@ -1,4 +1,4 @@
-package edu.uprm.cse.bigdata.retweetcount;
+package edu.uprm.cse.bigdata.retweets;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;

@@ -15,7 +15,7 @@
             .size([width, height])
             .padding(1.5);
 
-    d3.tsv("../output/users-testdata.txt", function(d) {
+    d3.tsv("../output/users_clean.txt", function(d) {
         d.value = +d.value;
         if (d.value) return d;
     }, function(error, classes) {

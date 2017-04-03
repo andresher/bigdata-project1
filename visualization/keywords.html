@@ -2,19 +2,24 @@
 <meta charset="utf-8">
 <style>
 
-.bar {
-  fill: steelblue;
-}
+    .bar {
+      fill: steelblue;
+    }
 
-.bar:hover {
-  fill: brown;
-}
+    .bar:hover {
+      fill: brown;
+    }
 
-.axis--x path {
-  display: none;
-}
+    .axis--x path {
+      display: none;
+    }
 
 </style>
+<style type="text/css">
+    dummydeclaration { padding-left: 4em; } /* Firefox ignores first declaration for some reason */
+    tab { padding-left: 50em; }
+</style>
+
 
 <h2>Frequency of the words Trump, MAGA, Dictator, Impeach, Drain, Swamp, and Change in the collection of tweets</h2>
 
@@ -33,7 +38,7 @@ var x = d3.scaleBand().rangeRound([0, width]).padding(0.1),
 var g = svg.append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.tsv("../output/keywords.txt", function(d) {
+d3.tsv("../output/keywords_no_trump.txt", function(d) {
   d.value = +d.value;
   return d;
 }, function(error, data) {
@@ -68,3 +73,7 @@ d3.tsv("../output/keywords.txt", function(d) {
 });
 
 </script>
+
+<h4><tab>TRUMP: 121,742</tab></h4>
+
+
